@@ -404,7 +404,7 @@ load_segment_command_content32(
     Dwarf_Unsigned mmpindex,
     int *errcode)
 {
-    FILE *f = fopen("/tmp/sink_reached_load_segment_command_content32.txt", "a");
+    FILE *f = fopen("/out/fuzz_reach_time_load_segment_command_content32.txt", "w");
     if (f) {
         fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
         fclose(f);
@@ -476,7 +476,7 @@ load_segment_command_content64(
     struct generic_macho_segment_command *msp,
     Dwarf_Unsigned mmpindex,int *errcode)
 {
-    FILE *f = fopen("/tmp/sink_reached_load_segment_command_content64.txt", "a");
+    FILE *f = fopen("/out/fuzz_reach_time_load_segment_command_content64.txt", "w");
     if (f) {
         fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
         fclose(f);
@@ -589,7 +589,7 @@ _dwarf_macho_load_dwarf_section_details32(
     struct generic_macho_segment_command *segp,
     Dwarf_Unsigned segi, int *errcode)
 {
-    FILE *f = fopen("/tmp/sink_reached_dwarf_macho_load_dwarf_section_details32.txt", "a");
+    FILE *f = fopen("/out/fuzz_reach_time_dwarf_macho_load_dwarf_section_details32.txt", "w");
     if (f) {
         fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
         fclose(f);
@@ -684,7 +684,7 @@ _dwarf_macho_load_dwarf_section_details64(
     Dwarf_Unsigned segi,
     int *errcode)
 {
-    FILE *f = fopen("/tmp/sink_reached_dwarf_macho_load_dwarf_section_details64.txt", "a");
+    FILE *f = fopen("/out/fuzz_reach_time_dwarf_macho_load_dwarf_section_details64.txt", "w");
     if (f) {
         fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
         fclose(f);
@@ -1249,7 +1249,7 @@ _dwarf_object_detector_universal_head_fd(
     Dwarf_Universal_Head * dw_head,
     int                *errcode)
 {
-    FILE *f = fopen("/tmp/sink_reached_dwarf_object_detector_universal_head_fd.txt", "a");
+    FILE *f = fopen("/out/fuzz_reach_time_dwarf_object_detector_universal_head_fd.txt", "w");
     if (f) {
         fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
         fclose(f);
@@ -1412,7 +1412,7 @@ _dwarf_object_detector_universal_instance(
     Dwarf_Unsigned *dw_align,
     int         *errcode)
 {
-    FILE *f = fopen("/tmp/sink_reached_dwarf_object_detector_universal_instance.txt", "a");
+    FILE *f = fopen("/out/fuzz_reach_time_dwarf_object_detector_universal_instance.txt", "w");
     if (f) {
         fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
         fclose(f);
