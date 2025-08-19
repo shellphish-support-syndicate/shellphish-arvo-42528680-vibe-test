@@ -62,7 +62,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endif /* _WIN32 */
 
 #include <config.h>
-
+#include <time.h>
 #include <stdlib.h> /* calloc() free() malloc() */
 #include <string.h> /* memcpy() memset() strcmp() strdup() */
 
