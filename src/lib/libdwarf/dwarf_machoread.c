@@ -404,6 +404,11 @@ load_segment_command_content32(
     Dwarf_Unsigned mmpindex,
     int *errcode)
 {
+    FILE *f = fopen("/tmp/sink_reached_load_segment_command_content32.txt", "a");
+    if (f) {
+        fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
+        fclose(f);
+    }
     struct segment_command sc;
     int res = 0;
     Dwarf_Unsigned filesize = mfp->mo_filesize;
@@ -471,6 +476,12 @@ load_segment_command_content64(
     struct generic_macho_segment_command *msp,
     Dwarf_Unsigned mmpindex,int *errcode)
 {
+    FILE *f = fopen("/tmp/sink_reached_load_segment_command_content64.txt", "a");
+    if (f) {
+        fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
+        fclose(f);
+    }
+
     struct segment_command_64 sc;
     int res = 0;
     Dwarf_Unsigned filesize = mfp->mo_filesize;
@@ -578,6 +589,11 @@ _dwarf_macho_load_dwarf_section_details32(
     struct generic_macho_segment_command *segp,
     Dwarf_Unsigned segi, int *errcode)
 {
+    FILE *f = fopen("/tmp/sink_reached_dwarf_macho_load_dwarf_section_details32.txt", "a");
+    if (f) {
+        fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
+        fclose(f);
+    }
     Dwarf_Unsigned seci = 0;
     Dwarf_Unsigned seccount = segp->nsects;
     Dwarf_Unsigned secalloc = seccount+1;
@@ -668,6 +684,11 @@ _dwarf_macho_load_dwarf_section_details64(
     Dwarf_Unsigned segi,
     int *errcode)
 {
+    FILE *f = fopen("/tmp/sink_reached_dwarf_macho_load_dwarf_section_details64.txt", "a");
+    if (f) {
+        fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
+        fclose(f);
+    }
     Dwarf_Unsigned seci = 0;
     Dwarf_Unsigned seccount = segp->nsects;
     Dwarf_Unsigned secalloc = seccount+1;
@@ -1138,7 +1159,7 @@ _dwarf_macho_object_access_init(
     res = _dwarf_macho_object_access_internals_init(internals,
         fd,
         uninumber,
-        ftype, endian, offsetsize, 
+        ftype, endian, offsetsize,
         universalbinary_count,
         filesize,
         localerrnum);
@@ -1228,6 +1249,11 @@ _dwarf_object_detector_universal_head_fd(
     Dwarf_Universal_Head * dw_head,
     int                *errcode)
 {
+    FILE *f = fopen("/tmp/sink_reached_dwarf_object_detector_universal_head_fd.txt", "a");
+    if (f) {
+        fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
+        fclose(f);
+    }
     struct Dwarf_Universal_Head_s  duhd;
     struct Dwarf_Universal_Head_s *duhdp = 0;
     struct  fat_header fh;
@@ -1386,6 +1412,11 @@ _dwarf_object_detector_universal_instance(
     Dwarf_Unsigned *dw_align,
     int         *errcode)
 {
+    FILE *f = fopen("/tmp/sink_reached_dwarf_object_detector_universal_instance.txt", "a");
+    if (f) {
+        fprintf(f, "Sink reached at %ld\n", (long)time(NULL));
+        fclose(f);
+    }
     struct  Dwarf_Universal_Arch_s* arch = 0;
 
     if (!dw_head) {
